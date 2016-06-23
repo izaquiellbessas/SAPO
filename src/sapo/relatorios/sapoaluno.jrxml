@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sapoaluno" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     aluno.`numMatricula` AS aluno_numMatricula,
+     aluno.`nome` AS aluno_nome,
+     aluno.`dataNasc` AS aluno_dataNasc,
+     aluno.`classificacao` AS aluno_classificacao,
+     aluno.`rua` AS aluno_rua,
+     aluno.`numRua` AS aluno_numRua,
+     aluno.`bairro` AS aluno_bairro,
+     aluno.`cidade` AS aluno_cidade,
+     aluno.`cep` AS aluno_cep,
+     aluno.`telefone` AS aluno_telefone
+FROM
+     `aluno` aluno
+ORDER BY
+     aluno_numMatricula ASC]]>
+	</queryString>
+	<field name="aluno_numMatricula" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aluno_nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aluno_dataNasc" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aluno_classificacao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aluno_rua" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aluno_numRua" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aluno_bairro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aluno_cidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aluno_cep" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aluno_telefone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="aluno_numMatricula">
+		<groupExpression><![CDATA[$F{aluno_numMatricula}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="128" splitType="Stretch">
+			<staticText>
+				<reportElement x="166" y="83" width="118" height="18"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Segoe UI" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Controle de Alunos]]></text>
+			</staticText>
+			<image>
+				<reportElement x="427" y="0" width="128" height="128"/>
+				<imageExpression class="java.lang.String"><![CDATA["/usr/imagens/logomarca_SAPO.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="44" y="32" width="360" height="20"/>
+				<textElement>
+					<font fontName="Segoe UI" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SAPO - Sistema de Apoio a Professores e Orientadores]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="64" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="298" splitType="Stretch">
+			<image>
+				<reportElement x="65" y="0" width="424" height="298"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineColor="#FFFFFF"/>
+					<leftPen lineColor="#FFFFFF"/>
+					<bottomPen lineColor="#FFFFFF"/>
+					<rightPen lineColor="#FFFFFF"/>
+				</box>
+				<imageExpression class="java.lang.String"><![CDATA["/usr/imagens/SAPO_Logomarca_RC.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="121" y="0" width="153" height="20"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{aluno_numMatricula}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="333" y="0" width="102" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe UI" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Nascimento: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="435" y="0" width="100" height="20"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{aluno_dataNasc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="40" y="20" width="81" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe UI" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="121" y="20" width="414" height="20"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{aluno_nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="40" y="60" width="81" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe UI" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="337" y="60" width="90" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe UI" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="121" y="60" width="212" height="20"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{aluno_rua}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="427" y="60" width="100" height="20"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{aluno_numRua}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="44" y="80" width="77" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe UI" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bairro: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="80" width="59" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe UI" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cidade: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="121" y="80" width="177" height="20"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{aluno_bairro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="80" width="155" height="20"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{aluno_cidade}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="44" y="100" width="79" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe UI" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CEP: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="100" width="59" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe UI" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="121" y="100" width="126" height="20"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{aluno_cep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="100" width="155" height="20"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{aluno_telefone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="40" y="40" width="81" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe UI" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Classificação: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="121" y="40" width="151" height="20"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{aluno_classificacao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="121" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe UI" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número Matrícula: ]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="437" y="24" width="78" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="24" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
